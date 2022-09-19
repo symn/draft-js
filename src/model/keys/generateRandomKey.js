@@ -23,4 +23,11 @@ function generateRandomKey(): string {
   return key;
 }
 
+function clearGenerateRandomKeySeenKeys() {
+  Object.getOwnPropertyNames(seenKeys).forEach(function deleteKeys(key) {
+    delete seenKeys[key];
+  });
+}
+
 module.exports = generateRandomKey;
+module.exports.clearGenerateRandomKeySeenKeys = clearGenerateRandomKeySeenKeys;
